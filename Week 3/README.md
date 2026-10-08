@@ -1,7 +1,5 @@
-**# Advanced Web Mapping - Lab 3**
+# Advanced Web Mapping - Lab 3
 
-**## Submission Evidence**
+## Submission Evidence**
 
-**## Lab Report**
-
-[View the Lab 3 Report (PDF)](LAB 3.pdf)
+[View Lab 3 PDF](LAB%203.pdf)
