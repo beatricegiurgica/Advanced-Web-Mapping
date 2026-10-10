@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ poi.poi_name }}{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1>{{ poi.poi_name }}</h1>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <p><strong>Type:</strong> {{ poi.get_poi_type_display }}</p>
+            <p><strong>Description:</strong> {{ poi.description }}</p>
+            <p><strong>Visitors per day:</strong> {{ poi.visitors_per_day }}</p>
+            <p><strong>Rating:</strong> ⭐ {{ poi.rating }}</p>
+        </div>
+    </div>
+
+    <h2 class="mt-5">Nearby Roads</h2>
+
+    {% if nearby_roads %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Road Name</th>
+                <th>Road Type</th>
+                <th>Speed Limit</th>
+                <th>Length (m)</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for road in nearby_roads %}
+            <tr>
+                <td>{{ road.road_name }}</td>
+                <td>{{ road.get_road_type_display }}</td>
+                <td>{{ road.speed_limit }} km/h</td>
+                <td>{{ road.length_meters }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% else %}
+
+    <p>No nearby roads found.</p>
+
+    {% endif %}
+
+    <a href="{% url 'spatial_analysis:dashboard' %}"
+       class="btn btn-secondary mt-3">
+        Back to Dashboard
+    </a>
+
+</div>
+
+{% endblock %}
