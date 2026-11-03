@@ -106,4 +106,5 @@ PostgreSQL + PostGIS
 ![Galway Education](Galway_Education.png)
 
 **Dublin — Mobile responsive view**
+
 ![Dublin Parks](GraftonStreet_Mobile.png)
